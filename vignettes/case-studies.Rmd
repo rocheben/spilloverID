@@ -1,0 +1,85 @@
+---
+title: "The three outbreak reconstructions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The three outbreak reconstructions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+## What the reconstructions are, and are not
+
+Three outbreaks whose wildlife reservoir was later established by molecular work
+are reconstructed from the summary values reported in the primary literature:
+Sin Nombre hantavirus (southwestern United States, 1993), Nipah virus
+(peninsular Malaysia, 1998–99) and Rift Valley fever virus (Lake Victoria basin,
+2006–07).
+
+These are simulated datasets anchored to published summary values, not primary
+field data. Site-level seroprevalences, host-specific exposure prevalences,
+exposure relative risks and inter-epidemic to epidemic ratios are set to the
+published figures; individual records are then drawn under the catalytic model
+so as to reproduce them. The intervals the framework returns therefore propagate
+the sampling error of the reconstruction only, not the uncertainty in the
+literature values used to parameterise it, which is likely to dominate. Every
+reported interval should be read as a lower bound on the true uncertainty.
+
+## Building a case dataset
+
+The constructors live in `run_cases.R` in the deposited `code/` directory rather
+than in the package, because they encode the published parameters of three
+specific outbreaks rather than a general method. The data object they return is
+an ordinary `spillover_data`.
+
+```{r build, eval = FALSE}
+library(spilloverID)
+source("run_cases.R")          # defines case_sin_nombre(), case_nipah(), case_rvf()
+set.seed(20260524)
+d_sn <- case_sin_nombre()
+d_sn
+```
+
+## Scoring, with the bootstrap
+
+```{r score, eval = FALSE}
+res <- compute_pi(d_sn, bootstrap = 100)
+res$pi
+res$rank
+round(res$criteria, 3)
+apply(res$bootstrap, 2, quantile, c(0.025, 0.975))
+```
+
+## The discrimination margin and its interval
+
+The margin is the score of the host under consideration minus the highest score
+among the remaining candidates. Its interval is the percentile interval of that
+difference across the same bootstrap replicates, computed replicate by
+replicate. Differencing the two per-host intervals instead would ignore the
+correlation between hosts within a replicate and would overstate the width.
+
+```{r margin, eval = FALSE}
+k  <- which(names(res$pi) == "P. maniculatus")
+bm <- res$bootstrap
+d  <- bm[, k] - apply(bm[, -k, drop = FALSE], 1, max)
+c(point = res$pi[k] - max(res$pi[-k]), quantile(d, c(0.025, 0.975)))
+```
+
+## Reading the result
+
+Three things are worth checking before a ranking is acted on. Whether the
+highest score reaches the interpretation threshold recalibrated for the set of
+criteria actually available, since the scale of the score depends on how many
+criteria discriminate. Whether the margin interval excludes zero. And whether
+the C12 ranking agrees with the overall ranking: a divergence between the two is
+the signature of a bridge-host or vector-borne configuration, in which the host
+producing the proximate epidemiological signal is not the host that maintains
+the pathogen.
+
+```{r weights, eval = FALSE}
+res$weights_used[res$weights_used > 0]   # criteria that were actually evaluable
+res$criteria[, "C12"]
+```

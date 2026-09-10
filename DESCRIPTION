@@ -1,0 +1,38 @@
+Package: spilloverID
+Type: Package
+Title: Reservoir Identification for Zoonotic Spillover Without Genetic Data
+Version: 0.2.0
+Date: 2026-09-09
+Authors@R: c(
+    person("Benjamin", "Roche", role = c("aut", "cre"),
+           email = "benjamin.roche@ird.fr",
+           comment = "IRD, UMI 209 UMMISCO"))
+Description: Implements a composite epidemiological plausibility score (Pi)
+    to identify the most likely wildlife reservoir of a zoonotic pathogen
+    when only serological and exposure data are available (no genetic data).
+    The score combines 14 independent epidemiological signatures spanning
+    spatial, individual, multi-level, demographic, temporal, mechanistic and
+    specificity dimensions, together with three maintenance signatures
+    (C12-C14) that separate a maintenance reservoir from an amplifying or
+    bridge host. The package also provides a mechanistic simulation engine
+    to validate inference under known ground truth.
+    See Roche et al. (2026) for the methodological framework, and
+    Viana et al. (2014) <doi:10.1016/j.tree.2014.03.002> for the underlying
+    "assembling evidence" approach.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.0.0)
+Imports:
+    lme4,
+    stats,
+    utils,
+    methods
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    jsonlite
+VignetteBuilder: knitr
+RoxygenNote: 7.3.1
+URL: https://github.com/rocheben/spilloverID
+BugReports: https://github.com/rocheben/spilloverID/issues

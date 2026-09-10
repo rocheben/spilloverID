@@ -1,0 +1,90 @@
+---
+title: "Getting started with spilloverID"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with spilloverID}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+## Purpose
+
+`spilloverID` quantifies which candidate wildlife host is the most plausible
+source of zoonotic spillover when only **serological and exposure data** are
+available (no genetic data). It implements a composite epidemiological
+plausibility score Π_k for each candidate host *k*, based on 14 independent
+signatures, three of which (C12–C14) target the distinction between a
+maintenance reservoir and an amplifying host.
+
+## Required data structure
+
+Three data frames at minimum:
+
+### Human survey (`human`)
+
+| site | ind | age | sex | prof | residence | sero | exp_h1 | exp_h2 | ... |
+|------|-----|-----|-----|------|-----------|------|--------|--------|-----|
+| 1    | 1   | 32  | 0   | 1    | 22        | 1    | 1      | 0      | ... |
+| 1    | 2   | 47  | 1   | 0    | 47        | 0    | 0      | 0      | ... |
+
+- `sero`: binary, result of serological assay.
+- `exp_hk`: binary, declared exposure to host *k* (one column per host).
+- Optional but recommended: `sex`, `prof` (occupational risk), `residence`
+  (years at site), `household`, `env_declared`.
+
+### Animal aggregations (`animal`)
+
+| site | host | n_sampled | n_pcr | prev_pcr | n_sero | prev_sero |
+|------|------|-----------|-------|----------|--------|-----------|
+| 1    | 1    | 40        | 24    | 0.60     | 32     | 0.80      |
+| 1    | 2    | 40        | 2     | 0.05     | 8      | 0.20      |
+
+### Site covariates (`site`, optional)
+
+| site | anthrop | [other env. variables] |
+|------|---------|-------------------------|
+| 1    | 0.42    | ...                     |
+
+## Minimal usage
+
+```{r minimal, eval = FALSE}
+library(spilloverID)
+data <- spillover_data(human, animal, site = site,
+                       n_hosts = 4,
+                       host_names = c("Oryzomys", "Peromyscus", "Heteromys", "Mus"))
+result <- compute_pi(data)
+print(result)
+```
+
+## With bootstrap confidence intervals
+
+```{r boot, eval = FALSE}
+result <- compute_pi(data, bootstrap = 500)
+```
+
+## Adapting weights
+
+```{r weights, eval = FALSE}
+# Mechanistic emphasis
+w <- default_weights()
+w["C6"] <- 0.20; w["C10"] <- 0.20
+w <- w / sum(w)
+result_mech <- compute_pi(data, weights = w)
+```
+
+## Interpreting Π_k
+
+Indicative thresholds:
+
+- **Π_k > 0.70** and ≥ 0.15 above second highest → highly plausible reservoir.
+- **Π_k > 0.50** without clear dominance → multi-host system plausible.
+- **Π_k < 0.30** → unlikely.
+
+Always inspect the per-criterion matrix (`result$criteria`) to understand
+which signatures are driving the score and whether convergence is achieved
+across at least four of the seven catégories (spatial, individual,
+multi-level, demographic, temporal, mechanistic, specificity).

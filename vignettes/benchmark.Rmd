@@ -1,0 +1,85 @@
+---
+title: "The mechanistic simulation benchmark"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The mechanistic simulation benchmark}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+## What the benchmark is for
+
+The composite score is a ranking rule, so the only way to characterise it before
+applying it to real data is to score datasets whose reservoir is known by
+construction. `simulate_spillover()` generates such datasets: a stochastic SIRS
+dynamic for one maintenance host, spillover-driven dynamics for the other
+candidates, an optional bridge host, and an individual-level human population
+with declared exposures, antibody waning and observation error.
+
+`scenario_params()` returns the parameter list for each of the eleven scenarios
+used in the paper: ten positive scenarios spanning the failure modes anticipated
+from the conceptual literature, and one no-spillover negative control.
+
+```{r scenarios, eval = FALSE}
+library(spilloverID)
+names(formals(scenario_params))
+p <- scenario_params("S2_bridge")
+str(p[c("n_sites", "n_hosts", "bridge_host", "alpha_reservoir", "alpha_bridge")])
+```
+
+## One replicate
+
+```{r one, eval = FALSE}
+sim <- simulate_spillover(scenario_params("S1_canonical"), seed = 20260524 + 17)
+attr(sim, "truth")$k_star      # the host the simulator designated as reservoir
+res <- compute_pi(sim)
+res$pi
+res$rank
+round(res$criteria, 3)         # per-host, per-criterion scores
+res$weights_used               # after redistribution of any NA criterion
+```
+
+The truth attribute is what makes the dataset a benchmark: `k_star` is the index
+of the maintenance host, and `NA` in the negative control, where no host
+maintains the pathogen.
+
+## Scoring a scenario
+
+Identification is scored two ways. Top-1 is a strict rank-1 call; the
+discrimination margin is the score of the true reservoir minus the highest score
+among the remaining candidates, and is negative whenever the call is wrong.
+
+```{r loop, eval = FALSE}
+scen <- "S1_canonical"
+out <- do.call(rbind, lapply(1:20, function(rep) {
+  d <- simulate_spillover(scenario_params(scen),
+                          seed = 20260524 + 17 * rep + 1)
+  k <- attr(d, "truth")$k_star
+  r <- compute_pi(d)
+  data.frame(rep = rep,
+             top1   = as.integer(r$rank[k] == 1),
+             margin = r$pi[k] - max(r$pi[-k]))
+}))
+mean(out$top1); mean(out$margin)
+```
+
+Two properties of the generative model should be kept in mind when reading such
+numbers. First, only the true reservoir carries the transmission loop, so its
+pooled PCR prevalence is the highest in essentially every replicate: the
+benchmark contains no configuration in which an amplifier out-prevalences the
+reservoir, which is precisely the inferential problem the composite exists to
+address. Second, the inter-epidemic contrast that C12 reads saturates at its
+ceiling for every host in most replicates, so the criterion carrying the largest
+weight is unidentifiable there. A high simulated identification rate is
+therefore a robustness check, not the principal validation.
+
+## Reproducing the published benchmark
+
+`run_benchmark.R` in the deposited `code/` directory runs all eleven scenarios
+with the seeds fixed in the script and writes `benchmark_results.json` together
+with the per-replicate criterion matrix and the reference rankings. It is
+checkpointed per scenario, so it can be interrupted and restarted.
