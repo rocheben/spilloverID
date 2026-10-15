@@ -74,12 +74,6 @@ compute_pi(sim)
 - `vignette("benchmark", package = "spilloverID")` — the simulation benchmark
 - `vignette("case-studies", package = "spilloverID")` — the three reconstructions
 
-## Citation
-
-Roche, B., Bento, A., Drexler, F. & Arnal, A. (2026). Prediction of wildlife
-reservoirs of zoonotic pathogens from observational data: a validated composite
-scoring framework.
-
 ## License
 
 MIT
