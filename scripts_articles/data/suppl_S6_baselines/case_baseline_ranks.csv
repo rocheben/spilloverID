@@ -1,0 +1,28 @@
+"case","case_label","baseline","true_host","rank_true","top1_strict","top2","n_tied_top"
+"sn","Sin Nombre (USA, 1993)","pi","P. maniculatus",1,1,1,1
+"sn","Sin Nombre (USA, 1993)","sero","P. maniculatus",1,1,1,1
+"sn","Sin Nombre (USA, 1993)","pcr","P. maniculatus",1,1,1,1
+"sn","Sin Nombre (USA, 1993)","or","P. maniculatus",2,0,1,1
+"sn","Sin Nombre (USA, 1993)","C12","P. maniculatus",1,1,1,1
+"sn","Sin Nombre (USA, 1993)","C7","P. maniculatus",1,1,1,1
+"sn","Sin Nombre (USA, 1993)","C14","P. maniculatus",1,1,1,1
+"sn","Sin Nombre (USA, 1993)","C5","P. maniculatus",1,1,1,1
+"sn","Sin Nombre (USA, 1993)","taxo","P. maniculatus",1,0,1,4
+"nv","Nipah (Malaysia, 1998-99)","pi","Pteropus",1,1,1,1
+"nv","Nipah (Malaysia, 1998-99)","sero","Pteropus",2,0,1,1
+"nv","Nipah (Malaysia, 1998-99)","pcr","Pteropus",2,0,1,1
+"nv","Nipah (Malaysia, 1998-99)","or","Pteropus",2,0,1,1
+"nv","Nipah (Malaysia, 1998-99)","C12","Pteropus",1,1,1,1
+"nv","Nipah (Malaysia, 1998-99)","C7","Pteropus",2,0,1,1
+"nv","Nipah (Malaysia, 1998-99)","C14","Pteropus",1,1,1,1
+"nv","Nipah (Malaysia, 1998-99)","C5","Pteropus",3,0,0,1
+"nv","Nipah (Malaysia, 1998-99)","taxo","Pteropus",1,1,1,1
+"rv","Rift Valley fever (Kenya, 2006-07)","pi","Wild ungulates",1,1,1,1
+"rv","Rift Valley fever (Kenya, 2006-07)","sero","Wild ungulates",2,0,1,1
+"rv","Rift Valley fever (Kenya, 2006-07)","pcr","Wild ungulates",2,0,1,1
+"rv","Rift Valley fever (Kenya, 2006-07)","or","Wild ungulates",3,0,0,1
+"rv","Rift Valley fever (Kenya, 2006-07)","C12","Wild ungulates",1,1,1,1
+"rv","Rift Valley fever (Kenya, 2006-07)","C7","Wild ungulates",2,0,1,1
+"rv","Rift Valley fever (Kenya, 2006-07)","C14","Wild ungulates",2,0,1,1
+"rv","Rift Valley fever (Kenya, 2006-07)","C5","Wild ungulates",3,0,0,1
+"rv","Rift Valley fever (Kenya, 2006-07)","taxo","Wild ungulates",1,1,1,1

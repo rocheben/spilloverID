@@ -1,0 +1,320 @@
+{
+  "sn": {
+    "case": "Sin Nombre (USA, 1993)",
+    "true_host": "P. maniculatus",
+    "baseline_pi": 0.8105,
+    "baseline_rank": 1,
+    "rows": [
+      {
+        "criterion": "C1",
+        "pi_true": 0.8445,
+        "rank_true": 1,
+        "delta_pi": 0.034,
+        "_row": "C1"
+      },
+      {
+        "criterion": "C2",
+        "pi_true": 0.8178,
+        "rank_true": 1,
+        "delta_pi": 0.0073,
+        "_row": "C2"
+      },
+      {
+        "criterion": "C3",
+        "pi_true": 0.7957,
+        "rank_true": 1,
+        "delta_pi": -0.0148,
+        "_row": "C3"
+      },
+      {
+        "criterion": "C4",
+        "pi_true": 0.8009,
+        "rank_true": 1,
+        "delta_pi": -0.0096,
+        "_row": "C4"
+      },
+      {
+        "criterion": "C5",
+        "pi_true": 0.8034,
+        "rank_true": 1,
+        "delta_pi": -0.0071,
+        "_row": "C5"
+      },
+      {
+        "criterion": "C6",
+        "pi_true": 0.8105,
+        "rank_true": 1,
+        "delta_pi": 1.1102e-16,
+        "_row": "C6"
+      },
+      {
+        "criterion": "C7",
+        "pi_true": 0.8009,
+        "rank_true": 1,
+        "delta_pi": -0.0096,
+        "_row": "C7"
+      },
+      {
+        "criterion": "C8",
+        "pi_true": 0.8105,
+        "rank_true": 1,
+        "delta_pi": 1.1102e-16,
+        "_row": "C8"
+      },
+      {
+        "criterion": "C9",
+        "pi_true": 0.8736,
+        "rank_true": 1,
+        "delta_pi": 0.0632,
+        "_row": "C9"
+      },
+      {
+        "criterion": "C10",
+        "pi_true": 0.8581,
+        "rank_true": 1,
+        "delta_pi": 0.0477,
+        "_row": "C10"
+      },
+      {
+        "criterion": "C11",
+        "pi_true": 0.8105,
+        "rank_true": 1,
+        "delta_pi": 2.2204e-16,
+        "_row": "C11"
+      },
+      {
+        "criterion": "C12",
+        "pi_true": 0.7652,
+        "rank_true": 1,
+        "delta_pi": -0.0453,
+        "_row": "C12"
+      },
+      {
+        "criterion": "C13",
+        "pi_true": 0.772,
+        "rank_true": 1,
+        "delta_pi": -0.0385,
+        "_row": "C13"
+      },
+      {
+        "criterion": "C14",
+        "pi_true": 0.7687,
+        "rank_true": 1,
+        "delta_pi": -0.0418,
+        "_row": "C14"
+      }
+    ]
+  },
+  "nv": {
+    "case": "Nipah (Malaysia, 1998-99)",
+    "true_host": "Pteropus",
+    "baseline_pi": 0.6983,
+    "baseline_rank": 1,
+    "rows": [
+      {
+        "criterion": "C1",
+        "pi_true": 0.6987,
+        "rank_true": 1,
+        "delta_pi": 0.0004,
+        "_row": "C1"
+      },
+      {
+        "criterion": "C2",
+        "pi_true": 0.683,
+        "rank_true": 1,
+        "delta_pi": -0.0153,
+        "_row": "C2"
+      },
+      {
+        "criterion": "C3",
+        "pi_true": 0.7205,
+        "rank_true": 1,
+        "delta_pi": 0.0222,
+        "_row": "C3"
+      },
+      {
+        "criterion": "C4",
+        "pi_true": 0.7336,
+        "rank_true": 1,
+        "delta_pi": 0.0354,
+        "_row": "C4"
+      },
+      {
+        "criterion": "C5",
+        "pi_true": 0.7119,
+        "rank_true": 1,
+        "delta_pi": 0.0137,
+        "_row": "C5"
+      },
+      {
+        "criterion": "C6",
+        "pi_true": 0.6983,
+        "rank_true": 1,
+        "delta_pi": 0,
+        "_row": "C6"
+      },
+      {
+        "criterion": "C7",
+        "pi_true": 0.6999,
+        "rank_true": 1,
+        "delta_pi": 0.0016,
+        "_row": "C7"
+      },
+      {
+        "criterion": "C8",
+        "pi_true": 0.6983,
+        "rank_true": 1,
+        "delta_pi": 0,
+        "_row": "C8"
+      },
+      {
+        "criterion": "C9",
+        "pi_true": 0.7527,
+        "rank_true": 1,
+        "delta_pi": 0.0544,
+        "_row": "C9"
+      },
+      {
+        "criterion": "C10",
+        "pi_true": 0.7619,
+        "rank_true": 1,
+        "delta_pi": 0.0637,
+        "_row": "C10"
+      },
+      {
+        "criterion": "C11",
+        "pi_true": 0.6983,
+        "rank_true": 1,
+        "delta_pi": 0,
+        "_row": "C11"
+      },
+      {
+        "criterion": "C12",
+        "pi_true": 0.6262,
+        "rank_true": 1,
+        "delta_pi": -0.0721,
+        "_row": "C12"
+      },
+      {
+        "criterion": "C13",
+        "pi_true": 0.637,
+        "rank_true": 1,
+        "delta_pi": -0.0612,
+        "_row": "C13"
+      },
+      {
+        "criterion": "C14",
+        "pi_true": 0.6317,
+        "rank_true": 1,
+        "delta_pi": -0.0666,
+        "_row": "C14"
+      }
+    ]
+  },
+  "rv": {
+    "case": "Rift Valley fever (Kenya, 2006-07)",
+    "true_host": "Wild ungulates",
+    "baseline_pi": 0.6392,
+    "baseline_rank": 1,
+    "rows": [
+      {
+        "criterion": "C1",
+        "pi_true": 0.6659,
+        "rank_true": 1,
+        "delta_pi": 0.0266,
+        "_row": "C1"
+      },
+      {
+        "criterion": "C2",
+        "pi_true": 0.6294,
+        "rank_true": 1,
+        "delta_pi": -0.0098,
+        "_row": "C2"
+      },
+      {
+        "criterion": "C3",
+        "pi_true": 0.6597,
+        "rank_true": 1,
+        "delta_pi": 0.0205,
+        "_row": "C3"
+      },
+      {
+        "criterion": "C4",
+        "pi_true": 0.6632,
+        "rank_true": 1,
+        "delta_pi": 0.0239,
+        "_row": "C4"
+      },
+      {
+        "criterion": "C5",
+        "pi_true": 0.6507,
+        "rank_true": 1,
+        "delta_pi": 0.0115,
+        "_row": "C5"
+      },
+      {
+        "criterion": "C6",
+        "pi_true": 0.6392,
+        "rank_true": 1,
+        "delta_pi": 0,
+        "_row": "C6"
+      },
+      {
+        "criterion": "C7",
+        "pi_true": 0.6379,
+        "rank_true": 1,
+        "delta_pi": -0.0014,
+        "_row": "C7"
+      },
+      {
+        "criterion": "C8",
+        "pi_true": 0.6392,
+        "rank_true": 1,
+        "delta_pi": 0,
+        "_row": "C8"
+      },
+      {
+        "criterion": "C9",
+        "pi_true": 0.6891,
+        "rank_true": 1,
+        "delta_pi": 0.0498,
+        "_row": "C9"
+      },
+      {
+        "criterion": "C10",
+        "pi_true": 0.6974,
+        "rank_true": 1,
+        "delta_pi": 0.0581,
+        "_row": "C10"
+      },
+      {
+        "criterion": "C11",
+        "pi_true": 0.6392,
+        "rank_true": 1,
+        "delta_pi": 1.1102e-16,
+        "_row": "C11"
+      },
+      {
+        "criterion": "C12",
+        "pi_true": 0.5531,
+        "rank_true": 2,
+        "delta_pi": -0.0862,
+        "_row": "C12"
+      },
+      {
+        "criterion": "C13",
+        "pi_true": 0.566,
+        "rank_true": 2,
+        "delta_pi": -0.0732,
+        "_row": "C13"
+      },
+      {
+        "criterion": "C14",
+        "pi_true": 0.5946,
+        "rank_true": 1,
+        "delta_pi": -0.0446,
+        "_row": "C14"
+      }
+    ]
+  }
+}

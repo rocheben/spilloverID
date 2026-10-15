@@ -1,0 +1,38 @@
+{
+  "sn": {
+    "case": "Sin Nombre (USA, 1993)",
+    "true_host": "P. maniculatus",
+    "baseline_pi": 0.8105,
+    "baseline_rank": 1,
+    "perturbation_n": 200,
+    "pct_rank1": 100,
+    "pct_rank_top2": 100,
+    "pi_median": 0.8223,
+    "pi_2.5": 0.6802,
+    "pi_97.5": 0.9311
+  },
+  "nv": {
+    "case": "Nipah (Malaysia, 1998-99)",
+    "true_host": "Pteropus",
+    "baseline_pi": 0.6983,
+    "baseline_rank": 1,
+    "perturbation_n": 200,
+    "pct_rank1": 88.5,
+    "pct_rank_top2": 100,
+    "pi_median": 0.7028,
+    "pi_2.5": 0.5366,
+    "pi_97.5": 0.8302
+  },
+  "rv": {
+    "case": "Rift Valley fever (Kenya, 2006-07)",
+    "true_host": "Wild ungulates",
+    "baseline_pi": 0.6392,
+    "baseline_rank": 1,
+    "perturbation_n": 200,
+    "pct_rank1": 82.5,
+    "pct_rank_top2": 99.5,
+    "pi_median": 0.6612,
+    "pi_2.5": 0.5171,
+    "pi_97.5": 0.7854
+  }
+}

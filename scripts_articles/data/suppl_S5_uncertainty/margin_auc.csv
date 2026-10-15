@@ -1,0 +1,3 @@
+margin_def,auc,n
+oracle (Pi_true - max Pi_other),1.0,3000
+observable,0.8569423584248749,3000

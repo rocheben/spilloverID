@@ -1,0 +1,8 @@
+"scenario","label","n_rep","n_hosts","n_true_reservoirs","top1_species","top1_genus","both_top2","any_top1","mean_margin","mean_margin_set","mean_gap_within","median_pi_true","median_max_pi","median_pi_range","pct_max_pi_gt_055"
+"S12_congeners","S12 congeners (cross-reactive assay)",150,5,1,61.3,98,NA,61.3,0.023,0.023,NA,0.749,0.774,0.285,100
+"S12b_congeners_resolved","S12b congeners (species-resolving assay)",150,5,1,59.3,97.3,NA,59.3,0.032,0.032,NA,0.747,0.782,0.297,100
+"S13_dual_symmetric","S13 dual reservoir (symmetric)",150,5,2,98.7,98.7,86.7,98.7,0.203,0.094,0.109,0.789,0.789,0.313,100
+"S13b_dual_asymmetric","S13b dual reservoir (asymmetric)",150,5,2,96,96,85.3,96,0.192,0.097,0.095,0.782,0.782,0.304,100
+"S14_hidden_reservoir","S14 incomplete inventory (reservoir unsampled)",150,4,0,NA,NA,NA,NA,NA,NA,NA,NA,0.728,0.192,100
+"S1c_ref_single","S1c reference: single reservoir",150,4,1,94,94,NA,94,0.169,0.169,NA,0.77,0.77,0.278,100
+"S11c_ref_null","S11c reference: no spillover",150,4,0,NA,NA,NA,NA,NA,NA,NA,NA,0.416,0.23,4.7
