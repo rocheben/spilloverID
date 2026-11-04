@@ -1,4 +1,4 @@
-"""Generate Figure 4 (per-criterion contribution heatmap) for the spilloverID Nature Microbiology submission.
+"""Generate Figure 4 (per-criterion contribution heatmap).
 
 Requires:
   - case_results.json (produced by run_cases.R)

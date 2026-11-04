@@ -29,44 +29,44 @@ Rscript run_cases.R
 step "2. Mechanistic benchmark (long)"
 Rscript run_benchmark.R
 
-step "3. Composite versus single criteria (Suppl. Fig. 4)"
+step "3. Composite versus single criteria (Suppl. Fig. F)"
 Rscript comp_vs_indiv.R
 
-step "4. Interpretation-threshold sweep (Suppl. Fig. 5)"
+step "4. Interpretation-threshold sweep (Suppl. Fig. D)"
 Rscript threshold_sweep.R
 
-step "5. Weight perturbation and leave-one-out (Suppl. Figs. 1-2)"
+step "5. Weight perturbation and leave-one-out (Suppl. Figs. H and I)"
 Rscript run_suppl.R
 
-step "6. Prospective power analysis (Suppl. Fig. 6)"
+step "6. Prospective power analysis (Suppl. Fig. J)"
 Rscript power_grid.R
 
-step "7. Bootstrap convergence (Suppl. Fig. 7)"
+step "7. Bootstrap convergence (Suppl. Fig. K)"
 Rscript boot_converge.R
 
-step "8. S4 reliability weighting (Suppl. Fig. 8)"
+step "8. S4 reliability weighting (Suppl. Fig. B)"
 ( cd suppl/S4 && Rscript 10_reliability.R && Rscript 20_reweight.R \
     && Rscript 21_check_renorm.R && python3 30_figure.py )
 
-step "9. S5 uncertainty and threshold recalibration (Suppl. Fig. 9)"
+step "9. S5 uncertainty and threshold recalibration (Suppl. Fig. C)"
 ( cd suppl/S5 && Rscript 02_uncertainty.R && Rscript 03_threshold.R \
     && Rscript 04_observable_margin.R && python3 05_calibration.py \
     && Rscript 07_case_threshold.R && python3 06_figure.py )
 
-step "10. S6 reference rankings (Suppl. Fig. 10)"
+step "10. S6 reference rankings (Suppl. Fig. E)"
 ( cd suppl/S6 && Rscript baselines_summary.R && python3 figure_baselines.py )
 
-step "11. S7 taxonomic resolution (Suppl. Fig. 11)"
+step "11. S7 taxonomic resolution (Suppl. Fig. G)"
 ( cd suppl/S7 && Rscript validate_ext.R && Rscript run_benchmark_ext.R \
     && python3 make_figure_ext.py )
 
 step "12. Main and supplementary figures"
 for f in make_figure_1_framework.py make_figure_2_benchmark.py \
          make_figure_3_pi_scores.py make_figure_4_criteria_heatmap.py \
-         make_figure_5_margins_and_C12.py make_suppl_figure_1_sensitivity.py \
-         make_suppl_figure_2_loco.py make_suppl_figure_3_per_rep_scatter.py \
-         make_new_suppl_figs.py make_suppl_figure_6_power.py \
-         make_suppl_figure_7_bootconv.py; do
+         make_figure_5_margins_and_C12.py make_suppl_figure_H_sensitivity.py \
+         make_suppl_figure_I_loco.py make_suppl_figure_A_per_rep_scatter.py \
+         make_suppl_figures_D_F.py make_suppl_figure_J_power.py \
+         make_suppl_figure_K_bootconv.py; do
   echo "  $f"; python3 "$f"
 done
 

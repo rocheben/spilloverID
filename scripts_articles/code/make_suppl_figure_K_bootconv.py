@@ -1,4 +1,4 @@
-"""Supplementary Figure 7 -- bootstrap convergence.
+"""Supplementary Figure K -- bootstrap convergence.
 
 Width of the 95% site-level bootstrap percentile interval on the true host's
 composite score as the number of bootstrap replicates B increases, for the three
@@ -42,6 +42,6 @@ ax.set_ylabel("width of the 95% interval on $\\Pi$\n(true host)", fontsize=9)
 ax.set_ylim(bottom=0, top=ax.get_ylim()[1] * 1.12)
 ax.legend(frameon=False, fontsize=7, loc='lower right')
 
-fig.savefig('../figures/suppl_figure_7_bootconv.png', dpi=300, bbox_inches='tight')
-fig.savefig('../figures/suppl_figure_7_bootconv.pdf', bbox_inches='tight')
-print('Wrote suppl_figure_7_bootconv')
+fig.savefig('../figures/suppl_figure_K_bootconv.png', dpi=300, bbox_inches='tight')
+fig.savefig('../figures/suppl_figure_K_bootconv.pdf', bbox_inches='tight')
+print('Wrote suppl_figure_K_bootconv')

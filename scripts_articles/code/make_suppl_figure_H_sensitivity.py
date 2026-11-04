@@ -1,4 +1,4 @@
-"""Generate Supplementary Figure 1 (weight perturbation sensitivity) for the spilloverID Nature Microbiology submission.
+"""Generate Supplementary Figure H (weight perturbation sensitivity).
 
 Requires:
   - suppl_sensitivity.json (produced by run_suppl.R)
@@ -76,10 +76,10 @@ ax.set_title(r'b   $\Pi$ distribution of true host under weight perturbation',
              loc='left', fontsize=9, fontweight='bold')
 ax.legend(loc='lower right', fontsize=7, frameon=False)
 
-plt.savefig('../figures/suppl_figure_1_sensitivity.png',
+plt.savefig('../figures/suppl_figure_H_sensitivity.png',
             dpi=300, bbox_inches='tight')
-plt.savefig('../figures/suppl_figure_1_sensitivity.pdf', bbox_inches='tight')
+plt.savefig('../figures/suppl_figure_H_sensitivity.pdf', bbox_inches='tight')
 plt.close()
-print("Supplementary Figure 1 saved.")
+print("Supplementary Figure H saved.")
 
 

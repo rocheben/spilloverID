@@ -1,5 +1,5 @@
 #' ============================================================================
-#' Bootstrap convergence check (Supplementary Figure 7)
+#' Bootstrap convergence check (Supplementary Figure K)
 #'
 #' Width of the 95% site-level bootstrap percentile interval on the true host's
 #' composite score as the number of bootstrap replicates B increases, for the

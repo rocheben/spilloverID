@@ -1,5 +1,5 @@
 #' ============================================================================
-#' Composite score versus each criterion used alone (Supplementary Figure 4)
+#' Composite score versus each criterion used alone (Supplementary Figure F)
 #'
 #' Derived from the per-replicate criterion matrix written by run_benchmark.R,
 #' so the comparison uses the same replicates as the benchmark itself rather

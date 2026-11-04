@@ -1,4 +1,4 @@
-#' Supplementary analyses for Roche et al. Nature Microbiology
+#' Supplementary analyses for the spilloverID manuscript
 #'
 #' Produces:
 #'   suppl_sensitivity.json  - weight perturbation sensitivity for 3 cases

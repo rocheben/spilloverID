@@ -1,4 +1,4 @@
-"""Supplementary Figure 6 -- prospective power analysis.
+"""Supplementary Figure J -- prospective power analysis.
 
 Top-1 identification rate as a function of the number of sampled sites and the
 number of animals sampled per host per site, for the canonical (a) and
@@ -66,6 +66,6 @@ fig.suptitle(
     f"cells outlined in vermillion reach the {target:.0f}% target",
     fontsize=7.5, y=1.03)
 
-fig.savefig('../figures/suppl_figure_6_power.png', dpi=300, bbox_inches='tight')
-fig.savefig('../figures/suppl_figure_6_power.pdf', bbox_inches='tight')
-print('Wrote suppl_figure_6_power')
+fig.savefig('../figures/suppl_figure_J_power.png', dpi=300, bbox_inches='tight')
+fig.savefig('../figures/suppl_figure_J_power.pdf', bbox_inches='tight')
+print('Wrote suppl_figure_J_power')

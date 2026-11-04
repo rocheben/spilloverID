@@ -1,4 +1,4 @@
-"""Generate Supplementary Figure 2 (leave-one-criterion-out heatmap) for the spilloverID Nature Microbiology submission.
+"""Generate Supplementary Figure I (leave-one-criterion-out heatmap).
 
 Requires:
   - suppl_loco.json (produced by run_suppl.R)
@@ -70,15 +70,15 @@ ax.set_yticks(range(3))
 ax.set_yticklabels(['Sin Nombre\n(canonical)',
                     'Nipah\n(bridge host)',
                     'RVF\n(vector-borne)'], fontsize=8)
-ax.set_title('Leave-one-criterion-out: change in $\\Pi$ of true reservoir, with rank flag if not #1',
+ax.set_title('Leave-one-criterion-out: change in $\\Pi$ of designated host, with rank flag if not #1',
              fontsize=9, fontweight='bold', loc='left')
 cbar = plt.colorbar(im, ax=ax, shrink=0.6, pad=0.02)
-cbar.set_label(r'$\Delta\Pi$ of true host when criterion is removed', fontsize=8)
+cbar.set_label(r'$\Delta\Pi$ of designated host when criterion is removed', fontsize=8)
 
-plt.savefig('../figures/suppl_figure_2_loco.png',
+plt.savefig('../figures/suppl_figure_I_loco.png',
             dpi=300, bbox_inches='tight')
-plt.savefig('../figures/suppl_figure_2_loco.pdf', bbox_inches='tight')
+plt.savefig('../figures/suppl_figure_I_loco.pdf', bbox_inches='tight')
 plt.close()
-print("Supplementary Figure 2 saved.")
+print("Supplementary Figure I saved.")
 
 

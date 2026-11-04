@@ -1,5 +1,5 @@
 #' ============================================================================
-#' Robustness of the interpretation threshold (Supplementary Figure 5)
+#' Robustness of the interpretation threshold (Supplementary Figure D)
 #'
 #' Re-runs the no-spillover negative control over a grid crossing the cryptic
 #' background force of infection with the serological specificity, and records

@@ -10,7 +10,7 @@
 #'     field team can actually compute, used by the interpretation rules and by
 #'     Supplementary Section S5;
 #'   - the full per-criterion matrix, used by the composite-versus-single-
-#'     criterion comparison (Supplementary Figure 4);
+#'     criterion comparison (Supplementary Figure F);
 #'   - the reference rankings of Supplementary Section S6.
 #'
 #' Writes ../data/benchmark_results.json      (summary + per-replicate)

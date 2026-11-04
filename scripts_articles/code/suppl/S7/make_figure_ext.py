@@ -12,7 +12,7 @@ Four panels:
      is not sampled, against the null and the single-reservoir arm
 
 Reads ../../../data/suppl_S7_taxonomic/ext_per_replicate.csv and ext_benchmark_results.json.
-Writes ../../../figures/suppl_figure_11_taxonomic_resolution.png
+Writes ../../../figures/suppl_figure_G_taxonomic_resolution.png
 """
 import json
 import numpy as np
@@ -211,8 +211,8 @@ fig.text(0.012, 0.958,
          "(4 in the reference and unsampled-reservoir arms)",
          fontsize=6.6, ha="left", va="top", color="#555555")
 
-fig.savefig(f"{FIG}/suppl_figure_11_taxonomic_resolution.png", dpi=300, bbox_inches="tight")
-fig.savefig(f"{FIG}/suppl_figure_11_taxonomic_resolution.pdf", bbox_inches="tight")
+fig.savefig(f"{FIG}/suppl_figure_G_taxonomic_resolution.png", dpi=300, bbox_inches="tight")
+fig.savefig(f"{FIG}/suppl_figure_G_taxonomic_resolution.pdf", bbox_inches="tight")
 print("panel a  species/genus:", [f"{a:.1f}/{b:.1f}" for a, b in zip(sp, gn)])
 print("panel c  any_top1:", [f"{v:.1f}" for v in anyt], " both_top2:", [f"{v:.1f}" for v in both])
 print("panel d  medians:", {a[0]: round(float(np.median(ev[ev.scenario == a[0]].max_pi)), 3) for a in arms})

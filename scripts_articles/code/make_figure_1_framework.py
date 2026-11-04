@@ -1,4 +1,4 @@
-"""Generate Figure 1 (14-criterion framework diagram) for the spilloverID Nature Microbiology submission."""
+"""Generate Figure 1 (14-criterion framework diagram)."""
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 from matplotlib import rcParams

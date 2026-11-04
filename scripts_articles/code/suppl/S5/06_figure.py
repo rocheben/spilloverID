@@ -1,5 +1,5 @@
 """
-Supplementary Figure 9, two panels:
+Supplementary Figure C, two panels:
   (a) reliability curve -- observed accuracy against the observable margin;
   (b) the no-spillover null under the two availability regimes that matter,
       the simulated benchmark (13 active criteria) and the three outbreak
@@ -97,8 +97,8 @@ set_frame(ax)
 panel_letter(ax, "b")
 
 fig.tight_layout(w_pad=2.0)
-fig.savefig("../../../figures/suppl_figure_9_uncertainty_calibration.png", dpi=300, bbox_inches="tight")
-fig.savefig("../../../figures/suppl_figure_9_uncertainty_calibration.pdf", bbox_inches="tight")
+fig.savefig("../../../figures/suppl_figure_C_uncertainty_calibration.png", dpi=300, bbox_inches="tight")
+fig.savefig("../../../figures/suppl_figure_C_uncertainty_calibration.pdf", bbox_inches="tight")
 
 # ---- 9.1 geometric check ----
 r = fig.canvas.get_renderer()

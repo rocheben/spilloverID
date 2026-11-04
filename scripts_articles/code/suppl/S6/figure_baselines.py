@@ -1,7 +1,7 @@
 """x60_figure.py -- two-panel figure: Pi vs reference rankings.
 
 Panel a: simulated benchmark, top-1 rate pooled over the 10 positive scenarios.
-Panel b: rank assigned to the true reservoir in each of the three real outbreaks.
+Panel b: rank assigned to the designated host in each of the three outbreak reconstructions.
 """
 import pandas as pd
 import numpy as np
@@ -92,7 +92,7 @@ axa.margins(y=0.045)
 axa.annotate("higher = better", xy=(1.0, -0.185), xycoords="axes fraction",
              fontsize=6, color="#6b7280", ha="right", va="top")
 
-# ---------------- Panel b: three real outbreaks ------------------------------
+# ---------------- Panel b: three outbreak reconstructions ------------------------------
 axb = fig.add_subplot(gs[0, 1])
 CASES = [("rank_sn", "Sin Nombre ($P.\\ maniculatus$)"),
          ("rank_nv", "Nipah ($Pteropus$)"),
@@ -126,7 +126,7 @@ for tick, b in zip(axb.get_yticklabels(), pb.index):
         tick.set_color(PROXY)
 axb.set_xlim(0.4, 3.9)
 axb.set_xticks([1, 2, 3])
-axb.set_xlabel("Rank given to the true reservoir", labelpad=7)
+axb.set_xlabel("Rank given to the designated host", labelpad=7)
 axb.set_title("b  In vivo, only $\\Pi$ and C12 hold", loc="left",
               fontweight="normal", pad=15)
 axb.set_ylim(-0.55, len(pb) - 0.38)
@@ -150,15 +150,15 @@ fig.legend(handles=hnd, loc="lower left", bbox_to_anchor=(0.215, 0.008),
 
 fig.suptitle(
     "Simple reference rankings outperform $\\Pi$ in simulation but fail the "
-    "real outbreaks $\\Pi$ was built for",
+    "outbreak reconstructions $\\Pi$ was built for",
     x=0.012, y=0.965, ha="left", fontsize=8.6)
 fig.text(0.012, 0.895,
          f"Simulated: {N_REP} replicates × 10 positive scenarios "
          f"(n = {N_REP*10} per ranking); filled = true reservoir ranked first.",
          ha="left", fontsize=6.2, color="#5b6167")
 
-fig.savefig("../../../figures/suppl_figure_10_baselines.png", dpi=300, bbox_inches="tight")
-fig.savefig("../../../figures/suppl_figure_10_baselines.pdf", bbox_inches="tight")
+fig.savefig("../../../figures/suppl_figure_E_baselines.png", dpi=300, bbox_inches="tight")
+fig.savefig("../../../figures/suppl_figure_E_baselines.pdf", bbox_inches="tight")
 
 # ---- §9.1 geometric check ---------------------------------------------------
 r = fig.canvas.get_renderer()

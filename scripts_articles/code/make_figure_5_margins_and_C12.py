@@ -1,4 +1,4 @@
-"""Generate Figure 5 (discrimination margin and C12 signal) for the spilloverID Nature Microbiology submission.
+"""Generate Figure 5 (discrimination margin and C12 signal).
 
 Requires:
   - case_results.json (produced by run_cases.R)

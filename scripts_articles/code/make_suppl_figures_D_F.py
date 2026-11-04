@@ -1,6 +1,6 @@
-"""New supplementary figures for the two added sensitivity analyses.
-S-Fig A: composite vs single-criterion identification across regimes (simulation vs real cases).
-S-Fig B: robustness of the 0.55 threshold under varying background seroprevalence x specificity.
+"""Supplementary Figures D and F.
+Fig F: composite vs single-criterion identification across regimes (simulation vs reconstructed cases).
+Fig D: robustness of the 0.55 threshold under varying background seroprevalence x specificity.
 Wong (2011) colour-blind-safe palette; sans-serif; no gridlines; RGB; PNG (300 dpi) + vector PDF.
 """
 import json, csv
@@ -57,7 +57,7 @@ def composite_real():
 comp_real=composite_real()
 
 # =================== FIGURE A: cross-regime ===================
-figA, ax = plt.subplots(figsize=(5.0, 4.2))
+fig_F, ax = plt.subplots(figsize=(5.0, 4.2))
 # criteria points (only those evaluable on real cases)
 xs=[]; ys=[]; labs=[]
 rng=np.random.default_rng(1)
@@ -79,22 +79,22 @@ ax.annotate('composite '+r'$\Pi_k$', (sim['composite'],comp_real),
             fontweight='bold', color=W['green'], ha='right')
 # guide region (good in both)
 ax.axhspan(2.5,3.4, xmin=0.0, xmax=1.0, color=W['green'], alpha=0.06, zorder=0)
-ax.text(40, 3.28, 'strong on real cases (top band)', fontsize=6.2, color=W['green'], va='center')
+ax.text(40, 3.28, 'strong on reconstructed cases (top band)', fontsize=6.2, color=W['green'], va='center')
 ax.set_xlabel('Top-1 identification on simulated benchmark (%, 10 positive scenarios)')
-ax.set_ylabel('Real cases identified at rank 1 (out of 3)')
+ax.set_ylabel('Reconstructed cases with designated host first (of 3)')
 ax.set_xlim(-3,104); ax.set_ylim(-0.4,3.5)
 ax.set_yticks([0,1,2,3])
 ax.set_title('Composite vs single criteria: only the composite is strong in both regimes',
              loc='left', fontweight='bold', fontsize=8)
 ax.text(0.0,-0.20,
-        'Single criteria that excel on simulated data (e.g. C7, C5) rely on idealized signals and fail on real cases;\n'
-        'criteria that identify all real reservoirs (C12, C13) are weak alone on simulated data. Only $\\Pi_k$ is high on both axes.\n'
+        'Single criteria that excel on simulated data (e.g. C7, C5) rely on idealized signals and fail on the reconstructed cases;\n'
+        'criteria that identify all three designated hosts (C12, C13) are weak alone on simulated data. Only $\\Pi_k$ is high on both axes.\n'
         'Criteria that cannot be evaluated on the reconstructions (C6, C8, C11) are omitted.',
         transform=ax.transAxes, fontsize=5.6, color='#555555', va='top')
-figA.subplots_adjust(left=0.11, right=0.97, top=0.92, bottom=0.20)
-figA.savefig(f'{OUT}/suppl_figure_4_composite_vs_individual.png', dpi=300, bbox_inches='tight')
-figA.savefig(f'{OUT}/suppl_figure_4_composite_vs_individual.pdf', bbox_inches='tight')
-plt.close(figA)
+fig_F.subplots_adjust(left=0.11, right=0.97, top=0.92, bottom=0.20)
+fig_F.savefig(f'{OUT}/suppl_figure_F_composite_vs_individual.png', dpi=300, bbox_inches='tight')
+fig_F.savefig(f'{OUT}/suppl_figure_F_composite_vs_individual.pdf', bbox_inches='tight')
+plt.close(fig_F)
 
 # =================== FIGURE B: threshold robustness ===================
 rows=[]
@@ -111,7 +111,7 @@ for r in rows:
     i=specs.index(r['spec']); j=alphas.index(r['alpha'])
     M[i,j]=r['maxpi_975']; BG[i,j]=r['bg_sero']; FP[i,j]=r['fp_055']; MED[i,j]=r['maxpi_median']
 
-figB, ax = plt.subplots(figsize=(5.4,3.6))
+fig_D, ax = plt.subplots(figsize=(5.4,3.6))
 im=ax.imshow(M, aspect='auto', cmap='cividis', vmin=0.35, vmax=0.58)  # CVD-safe sequential
 for i in range(len(specs)):
     for j in range(len(alphas)):
@@ -126,19 +126,19 @@ ax.set_xlabel('Cryptic background FOI (alpha_cryptic_bg)')
 ax.set_ylabel('Assay specificity')
 ax.set_title('Negative-control max '+r'$\Pi$'+' stays below the 0.55 threshold across background and specificity',
              loc='left', fontweight='bold', fontsize=7.6)
-cb=figB.colorbar(im, ax=ax, shrink=0.85, pad=0.02)
+cb=fig_D.colorbar(im, ax=ax, shrink=0.85, pad=0.02)
 cb.set_label('97.5th percentile of max '+r'$\Pi$'+' (negative control)', fontsize=6.5)
 cb.ax.axhline(0.55, color=W['verm'], linewidth=1.6)
 cb.set_ticks([0.40,0.45,0.50,0.55])
 cb.ax.text(0.5, 0.55, ' 0.55 threshold', color=W['verm'], fontsize=6, va='bottom', ha='left', transform=cb.ax.get_yaxis_transform())
-figB.text(0.01,0.01,
+fig_D.text(0.01,0.01,
           'Each cell: 20 negative-control replicates. med = median max '+r'$\Pi$'+'; 97.5% = upper percentile; '
           'FP = false-positive rate at '+r'$\Pi\geq0.55$'+'; bg = realized human background seroprevalence.',
           fontsize=5.4, color='#555555')
-figB.subplots_adjust(left=0.10, right=1.0, top=0.90, bottom=0.16)
-figB.savefig(f'{OUT}/suppl_figure_5_threshold_robustness.png', dpi=300, bbox_inches='tight')
-figB.savefig(f'{OUT}/suppl_figure_5_threshold_robustness.pdf', bbox_inches='tight')
-plt.close(figB)
+fig_D.subplots_adjust(left=0.10, right=1.0, top=0.90, bottom=0.16)
+fig_D.savefig(f'{OUT}/suppl_figure_D_threshold_robustness.png', dpi=300, bbox_inches='tight')
+fig_D.savefig(f'{OUT}/suppl_figure_D_threshold_robustness.pdf', bbox_inches='tight')
+plt.close(fig_D)
 print("Saved both supplementary figures (PNG + PDF).")
 print("composite sim_top1=%.1f%% real=3/3 ; best single sim=C7 %.0f%% real=%d/3 ; C12 real=3/3 sim=%.0f%%"
       % (sim['composite'], sim['C7'], realid['C7'], sim['C12']))

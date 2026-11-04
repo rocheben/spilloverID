@@ -1,5 +1,5 @@
 #' ============================================================================
-#' Prospective power analysis (Supplementary Figure 6)
+#' Prospective power analysis (Supplementary Figure J)
 #'
 #' Top-1 identification rate as a function of the number of sampled sites and
 #' the number of animals sampled per host per site, for the canonical scenario

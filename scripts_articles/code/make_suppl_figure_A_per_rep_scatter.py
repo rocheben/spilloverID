@@ -1,4 +1,4 @@
-"""Generate Supplementary Figure 3 (per-replicate benchmark scatter) for the spilloverID Nature Microbiology submission.
+"""Generate Supplementary Figure A (per-replicate benchmark scatter).
 
 Requires:
   - benchmark_results.json (produced by run_benchmark.R)
@@ -68,10 +68,10 @@ ax.legend(loc='upper left', fontsize=6.5, frameon=False, ncol=2,
 ax.text(0.95, 0.55, '\u03A0 = 0.55 threshold', fontsize=7, color='#D55E00',
         ha='right', va='bottom')
 
-plt.savefig('../figures/suppl_figure_3_per_rep_scatter.png',
+plt.savefig('../figures/suppl_figure_A_per_rep_scatter.png',
             dpi=300, bbox_inches='tight')
-plt.savefig('../figures/suppl_figure_3_per_rep_scatter.pdf', bbox_inches='tight')
+plt.savefig('../figures/suppl_figure_A_per_rep_scatter.pdf', bbox_inches='tight')
 plt.close()
-print("Supplementary Figure 3 saved.")
+print("Supplementary Figure A saved.")
 
 
